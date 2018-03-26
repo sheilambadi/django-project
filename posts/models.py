@@ -7,6 +7,10 @@ class Posts(models.Model):
     body = models.TextField()
     created_at = models.DateTimeField(default = datetime.now(), blank = True)
 
+    #display title of post in admin panel
+    def __str__(self):
+        return self.title
+
     #remove additional s in Postss admin panel
     class Meta:
         verbose_name_plural = 'Posts'
